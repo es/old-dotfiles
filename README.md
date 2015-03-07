@@ -1,27 +1,16 @@
 # Dotfiles
 
-These are the files I tweak on almost a daily basis, it's a serious addiction.
-
-Use these files in tandem with my [Boxen Config](https://github.com/tarebyte/my-boxen)
-
-## Install
-3ish Easy steps:
-
 ```
-git clone https://github.com/tarebyte/dotfile ~/.dotfiles
+git clone git@github.com:EmilS/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 script/bootstrap
-
-# If you aren't using My Boxen
 chsh -s /bin/zsh
 ```
 
-And that's it! This will symlink any .symlink file into your home directory
+This will symlink any .symlink file into your home directory
+
+## Configuring Iterm2
+Make sure to use a [Powerline fonts](https://github.com/powerline/fonts). I find Inconsolata 16pt for Regular and 14pt for Non-ASCII work best.
 
 ## Thanks
-
-I used [Zach Holman's](http://zachholman.com/) awesome [dotfiles](https://github.com/holman/dotfiles)
-as a template to build my own.
-
-I pulled a lot of functionality out of the [Neo vim-config](https://github.com/neo/vim-config)
-and [Jason Long's](http://www.jasonlong.me/) [vimrc](https://github.com/jasonlong/dotfiles/blob/master/vimrc)
+Built on top of [@tarebyte's](https://twitter.com/tarebyte) awesome [dotfiles](https://github.com/tarebyte/dotfiles).
