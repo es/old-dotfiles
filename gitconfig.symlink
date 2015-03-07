@@ -1,9 +1,7 @@
-# Not Symlinked because Boxen
 [user]
-name = YOUR_NAME
-email = YOUR_EMAIL
-signingkey = PGP_FOR_THE_WIN
-username = GITHUB_USERNAME
+name = Emil Stolarsky
+email = emil.stolarsky@gmail.com
+username = EmilS
 
 [alias]
 a             =  add
@@ -25,12 +23,12 @@ pom           =  push origin master
 phm           =  push heroku master
 sc            =  commit -S -m
 sci           =  commit -S
-st            =  status -sb
-today         =  log --since=midnight --author='YOUR_NAME' --oneline
+st            =  status
+today         =  log --since=midnight --author='Emil Stolarsky' --oneline
 type          =  cat-file -t
 up            =  !sh -c 'git pull --rebase --prune && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}..'
 who           =  shortlog -n -s --no-merges
-g             = grep --break --heading --line-number
+g             =  grep --break --heading --line-number
 
 [color]
 branch=auto
@@ -39,14 +37,14 @@ interactive=auto
 status=auto
 
 [github]
-user = GITHUB_USERNAME
+user = EmilS
 
 [credential]
 helper = osxkeychain
 
 [core]
 editor = vim
-excludesfile = /Users/USER_NAME/.gitignore_global
+excludesfile = /Users/oculus/.gitignore_global
 whitespace = trailing-space,space-before-tab,indent-with-non-tab
 
 [push]
@@ -63,4 +61,4 @@ clean = git-media-clean %f
 smudge = git-media-smudge %f
 
 [gitsh]
-defaultCommand = status -sb
+defaultCommand = status
