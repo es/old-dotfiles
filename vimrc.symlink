@@ -65,6 +65,7 @@
  NeoBundle 'tpope/vim-surround'
  NeoBundle 'kana/vim-textobj-user'
  NeoBundle 'nelstrom/vim-textobj-rubyblock'
+ NeoBundle 'fatih/vim-go'
 
  call neobundle#end()
 
