@@ -4,7 +4,7 @@ ZSH_THEME="mark"
 
 eval "$(direnv hook zsh)"
 
-plugins=(autojump bundler brew gem git heroku npm rails rbenv-completion ruby tmuxinator vagrant zsh-syntax-highlighting)
+plugins=(autojump bundler brew gem git heroku npm rails rbenv-completion ruby tmuxinator vagrant zsh-syntax-highlighting awscli)
 
 export ARCHFLAGS="-arch x86_64"
 
@@ -24,4 +24,7 @@ export RBENV_ROOT=/usr/local/var/rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export GOPATH=$HOME/workspace/go
 export PATH=$PATH:$GOPATH/bin
+
+# AWS CLI completion
+source /usr/local/share/zsh/site-functions/_aws
 
