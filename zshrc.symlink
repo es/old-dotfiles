@@ -29,3 +29,7 @@ export PATH=$PATH:$GOPATH/bin
 # AWS CLI completion
 source /usr/local/share/zsh/site-functions/_aws
 
+# Setup shell boot2docker
+if which boot2docker > /dev/null; then
+  eval "$(boot2docker shellinit 2> /dev/null)"
+fi
