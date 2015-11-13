@@ -10,6 +10,7 @@ alias bxrt='bx rake test'
 
 alias gg='git g'
 alias gs='git st'
+alias gityolo='git add .; git commit --amend --no-edit; git push origin +$(git rev-parse --abbrev-ref HEAD)'
 
 alias js='jekyll server --watch --drafts'
 
