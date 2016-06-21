@@ -1,7 +1,7 @@
 # Dotfiles
 
 ```
-git clone git@github.com:EmilS/dotfiles.git ~/.dotfiles
+git clone git@github.com:es/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 script/bootstrap
 chsh -s /bin/zsh
