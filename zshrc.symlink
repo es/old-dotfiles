@@ -5,7 +5,7 @@ ZSH_THEME="tarebyte"
 eval "$(direnv hook zsh)"
 eval "$(keychain --eval id_rsa --agents 'ssh')"
 
-plugins=(autojump bundler brew gem git heroku npm rails rbenv-completion ruby vagrant zsh-syntax-highlighting awscli)
+plugins=(autojump bundler brew gem git heroku npm rails rbenv-completion ruby vagrant zsh-syntax-highlighting awscli sublime)
 
 export ARCHFLAGS="-arch x86_64"
 export EDITOR=vim
