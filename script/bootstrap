@@ -134,11 +134,8 @@ install_bin_files () {
 
 install_oh_my_zsh () {
   if [ ! -d "$HOME/.oh-my-zsh" ]; then
-    git clone https://github.com/tarebyte/oh-my-zsh.git $HOME/.oh-my-zsh
-    cd $HOME/.oh-my-zsh
-    git remote rename origin tarebyte
-    git remote add origin git@github.com:robbyrussell/oh-my-zsh.git
-    cd $DOTFILES_ROOT
+    sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+    cp $DOTFILES_ROOT/tarebyte.zsh-theme ~/.oh-my-zsh/themes
   fi
 }
 
@@ -151,6 +148,18 @@ install_neo_bundle () {
   fi
 }
 
+install_homebrew () {
+  if [ ! -e "/usr/local/bin/brew" ]; then
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  fi
+}
+
+install_cli_tools () {
+  brew install autojump git heroku npm rbenv zsh-syntax-highlighting awscli wget keychain direnv
+}
+
+install_homebrew
+install_cli_tools
 install_oh_my_zsh
 install_dotfiles
 install_neo_bundle

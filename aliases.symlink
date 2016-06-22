@@ -1,22 +1,14 @@
 alias :q='exit'
-
 alias bx='bundle exec'
-alias bxks='bx knife solo'
-alias bxrk='bx rake'
-alias bxrc='bx rails console'
-alias bxrr='bx rake routes'
-alias bxrs='bx rails server'
-alias bxrt='bx rake test'
-
-alias gg='git g'
-alias gs='git st'
-
-alias js='jekyll server --watch --drafts'
-
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 
-alias scb='script/cibuild'
+alias gityolo='git add .; git commit --amend --no-edit; git push origin +$(git rev-parse --abbrev-ref HEAD)'
+alias git-cleanup='git branch --merged | grep -v "\*" | grep -v master | grep -v dev | xargs -n 1 git branch -d'
 
-alias vh="vagrant halt"
 alias vssh="vagrant ssh"
 alias vu="vagrant up"
+
+alias docker-machine-env='eval $(docker-machine env default)'
+
+alias knife="BUNDLE_GEMFILE=/Users/emil/.chef/Gemfile bundle exec knife"
+alias refresh-ssh="knife ssh known_hosts update all"

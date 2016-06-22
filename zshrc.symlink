@@ -1,18 +1,16 @@
 export ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="mark"
+ZSH_THEME="tarebyte"
 
 eval "$(direnv hook zsh)"
-eval "$(boot2docker shellinit 2> /dev/null)"
+eval "$(keychain --eval id_rsa --agents 'ssh')"
 
-plugins=(autojump bundler brew gem git heroku npm rails rbenv-completion ruby tmuxinator vagrant zsh-syntax-highlighting awscli)
+plugins=(autojump bundler brew gem git heroku npm rails rbenv-completion ruby vagrant zsh-syntax-highlighting awscli)
 
 export ARCHFLAGS="-arch x86_64"
-
-source $ZSH/oh-my-zsh.sh
-
 export EDITOR=vim
 
+source $ZSH/oh-my-zsh.sh
 source ~/.aliases
 
 if [[ -a ~/.localrc ]]
@@ -27,14 +25,13 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # AWS CLI completion
 source /usr/local/share/zsh/site-functions/_aws
 
-# Setup shell boot2docker
-if which boot2docker > /dev/null; then
-  eval "$(boot2docker shellinit 2> /dev/null)"
-fi
+
+# Activate virtualenv
+export WORKON_HOME=~/.virtualenvs
+source $(brew --prefix)/bin/virtualenvwrapper.sh
 
 # Golang Paths
 export GOPATH=/Users/emil/workspace/golang
 export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
-
