@@ -1,7 +1,8 @@
 [user]
 name = Emil Stolarsky
-email = emil.stolarsky@gmail.com
-username = EmilS
+email = emil@shopify.com
+username = es
+signingkey = A0EFA8E6
 
 [alias]
 a             =  add
@@ -41,7 +42,7 @@ ui=true
 user = EmilS
 
 [credential]
-helper = osxkeychain
+	helper = osxkeychain
 
 [core]
 editor = vim
@@ -63,3 +64,13 @@ smudge = git-media-smudge %f
 
 [gitsh]
 defaultCommand = status
+
+[gpg]
+program = gpg2
+
+[commit]
+gpgsign = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true

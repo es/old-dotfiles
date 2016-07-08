@@ -4,10 +4,16 @@ ZSH_THEME="mark"
 
 eval "$(direnv hook zsh)"
 eval "$(boot2docker shellinit 2> /dev/null)"
-eval "$(keychain --eval id_rsa)"
+eval "$(keychain --eval id_rsa --agents 'ssh')"
 #eval "$(ssh-add ~/.ssh/id_rsa &>/dev/null)"
 
 plugins=(autojump bundler brew gem git heroku npm rails rbenv-completion ruby tmuxinator vagrant zsh-syntax-highlighting awscli)
+
+
+# gpg things
+eval "$(gpg-agent --daemon >/dev/null 2>&1)"
+GPG_TTY=$(tty)
+export GPG_TTY
 
 export ARCHFLAGS="-arch x86_64"
 
@@ -21,6 +27,9 @@ if [[ -a ~/.localrc ]]
 then
   source ~/.localrc
 fi
+
+# aws-cli autocomplete
+source /usr/local/share/zsh/site-functions/_aws
 
 # Activate virtualenv
 export WORKON_HOME=~/.virtualenvs
@@ -44,3 +53,5 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
 export HDFS_USERNAME=emilstolarsky
+
+source /opt/dev/dev.sh
