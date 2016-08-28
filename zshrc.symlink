@@ -18,6 +18,8 @@ then
   source ~/.localrc
 fi
 
+export DISABLE_SPRING=1
+
 # Installing rbenv through Homebrew
 export RBENV_ROOT=/usr/local/var/rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
